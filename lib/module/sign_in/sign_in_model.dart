@@ -5,5 +5,9 @@ class _SignInModel extends TTChangeNotifier<_SignInView> {
 
   void onWithFbPressed() {}
 
-  void onMobileNumberPressed() {}
+  void onMobileNumberPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createMobileNumber();
+    }));
+  }
 }

@@ -30,6 +30,7 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
                   Row(
                     children: [
                       Image.asset(Id.ic_flag),
+                      const SizedBox(width: 12),
                       Text(
                         '+880',
                         style: St.body18500.copyWith(color: Cl.cl030303),
