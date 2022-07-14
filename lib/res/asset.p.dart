@@ -7,9 +7,11 @@
 class Id {
   Id._();
 
+  static const String ic_background2 = 'assets/images/ic_background2.png';
   static const String ic_carrot = 'assets/images/ic_carrot.png';
   static const String ic_fb = 'assets/images/ic_fb.png';
   static const String ic_flag = 'assets/images/ic_flag.png';
   static const String ic_gg = 'assets/images/ic_gg.png';
+  static const String ic_illustration = 'assets/images/ic_illustration.png';
   static const String img_background = 'assets/images/img_background.png';
 }

@@ -4,68 +4,72 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
   @override
   Widget buildWithModel(BuildContext context, _SignInModel model) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset(
-            Id.img_background,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Text(
-              'Get your groceries with nectar',
-              style: St.body26600.copyWith(
-                color: Cl.cl030303,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              Id.img_background,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Text(
+                'Get your groceries with nectar',
+                style: St.body26600.copyWith(
+                  color: Cl.cl030303,
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 30),
-          InkWell(
-            onTap: model.onMobileNumberPressed,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
-              height: 40,
-              child: Column(
-                children: [
-                  Row(
+            const SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Material(
+                child: InkWell(
+                  onTap: model.onMobileNumberPressed,
+                  child: Column(
                     children: [
-                      Image.asset(Id.ic_flag),
-                      const SizedBox(width: 12),
-                      Text(
-                        '+880',
-                        style: St.body18500.copyWith(color: Cl.cl030303),
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Image.asset(Id.ic_flag),
+                          const SizedBox(width: 12),
+                          Text(
+                            '+880',
+                            style: St.body18500.copyWith(color: Cl.cl030303),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 7),
+                      Container(
+                        height: 1,
+                        color: Cl.clE2E2E2,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 11),
-                  Container(
-                    height: 1,
-                    color: Cl.clE2E2E2,
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 40),
-          Text(
-            'Or connect with social media',
-            style: St.body14600.copyWith(color: Cl.cl828282),
-          ),
-          const SizedBox(height: 38),
-          buildButton(
-            onPressed: model.onWithGGPressed,
-            backgroundColor: Cl.cl5383EC,
-            imgAsset: Id.ic_gg,
-            text: 'Continue with Google',
-          ),
-          const SizedBox(height: 20),
-          buildButton(
-            onPressed: model.onWithFbPressed,
-            imgAsset: Id.ic_fb,
-            text: 'Continue with Facebook',
-            backgroundColor: Cl.cl4A66AC,
-          )
-        ],
+            const SizedBox(height: 40),
+            Text(
+              'Or connect with social media',
+              style: St.body14600.copyWith(color: Cl.cl828282),
+            ),
+            const SizedBox(height: 38),
+            buildButton(
+              onPressed: model.onWithGGPressed,
+              backgroundColor: Cl.cl5383EC,
+              imgAsset: Id.ic_gg,
+              text: 'Continue with Google',
+            ),
+            const SizedBox(height: 20),
+            buildButton(
+              onPressed: model.onWithFbPressed,
+              imgAsset: Id.ic_fb,
+              text: 'Continue with Facebook',
+              backgroundColor: Cl.cl4A66AC,
+            )
+          ],
+        ),
       ),
     );
   }
