@@ -34,7 +34,14 @@ class _LogInModel extends TTChangeNotifier<_LogInView> {
     if (!isValid) {
       return;
     }
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createHome();
+    }));
   }
 
-  void onSignUpPressed() {}
+  void onSignUpPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createSignUp();
+    }));
+  }
 }
