@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../res/res.dart';
+import '../utils/validator.p.dart';
 
 enum TextType { password, email, normal, phone }
 
@@ -60,9 +61,9 @@ class AuthTextField extends StatelessWidget {
         if (isRequired && (value == null || value.isEmpty)) {
           return 'Vui lòng nhập email';
         }
-        // if (!Validator.validEmail(value ?? '')) {
-        //   return 'Email không đúng định dạng';
-        // }
+        if (!Validator.validEmail(value ?? '')) {
+          return 'Email không đúng định dạng';
+        }
         return null;
       case TextType.normal:
         if (isRequired && (value == null || value.isEmpty)) {

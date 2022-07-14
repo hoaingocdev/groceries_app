@@ -2,6 +2,7 @@ library select_location;
 
 import 'package:flutter/material.dart';
 import 'package:groceries_app/model/model.dart';
+import 'package:groceries_app/module/module.dart';
 import 'package:provider/provider.dart';
 import 'package:groceries_app/widget/widget.dart';
 

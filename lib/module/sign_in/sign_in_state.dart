@@ -28,7 +28,7 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
                   onTap: model.onMobileNumberPressed,
                   child: Column(
                     children: [
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           Image.asset(Id.ic_flag),

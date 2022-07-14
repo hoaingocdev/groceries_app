@@ -54,5 +54,9 @@ class _SelectLocationModel extends TTChangeNotifier<_SelectLocationView> {
     notifyListeners();
   }
 
-  void onSubmitPressed() {}
+  void onSubmitPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createLogIn();
+    }));
+  }
 }

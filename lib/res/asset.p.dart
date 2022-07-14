@@ -2,8 +2,6 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
-// ignore_for_file: constant_identifier_names
-
 class Id {
   Id._();
 
@@ -14,4 +12,5 @@ class Id {
   static const String ic_gg = 'assets/images/ic_gg.png';
   static const String ic_illustration = 'assets/images/ic_illustration.png';
   static const String img_background = 'assets/images/img_background.png';
+  static const String img_background_carrot = 'assets/images/img_background_carrot.png';
 }
