@@ -17,6 +17,8 @@ class AuthTextField extends StatelessWidget {
   final Color? iconColor;
   final bool obscureText;
   final bool isRequired;
+  final int? maxLength;
+  final EdgeInsetsGeometry? contentPadding;
   final Function(String)? onChanged;
   final List<TextInputFormatter>? inputFormatters;
   final String? Function(String?)? validator;
@@ -35,6 +37,8 @@ class AuthTextField extends StatelessWidget {
     this.enabled = true,
     this.prefixIcon,
     this.keyboardType,
+    this.contentPadding,
+    this.maxLength,
   }) : super(key: key);
 
   String? validate(String? value) {
@@ -78,10 +82,12 @@ class AuthTextField extends StatelessWidget {
       controller: controller,
       validator: validator ?? validate,
       obscureText: obscureText,
+      maxLength: maxLength,
       cursorColor: Cl.clE2E2E2,
       scrollPadding: EdgeInsets.zero,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.only(top: 14),
+        contentPadding: contentPadding,
+
         prefixIcon: prefixIcon,
         iconColor: iconColor,
         suffixIcon: suffixIcon,

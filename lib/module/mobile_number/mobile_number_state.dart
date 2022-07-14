@@ -10,19 +10,10 @@ class _MobileNumberViewState extends TTState<_MobileNumberModel, _MobileNumberVi
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 8 + device.padding.top,
-                ),
-                child: IconButton(
-                  onPressed: model.onBackPressed,
-                  icon: const Icon(Icons.arrow_back_ios),
-                ),
-              ),
-              const SizedBox(height: 66),
-              Text(
-                'Enter your mobile number',
-                style: St.body26600.copyWith(color: Cl.cl181725),
+              TTTitle(
+                title: 'Enter your mobile number',
+                onPressed: model.onBackPressed,
+                top: 8 + device.padding.top,
               ),
               const SizedBox(height: 27),
               Text(
@@ -30,6 +21,7 @@ class _MobileNumberViewState extends TTState<_MobileNumberModel, _MobileNumberVi
                 style: St.body16600.copyWith(color: Cl.cl7C7C7C),
               ),
               AuthTextField(
+                contentPadding: const EdgeInsets.only(top: 14),
                 keyboardType: TextInputType.phone,
                 textType: TextType.phone,
                 // isRequired: true,
@@ -56,23 +48,10 @@ class _MobileNumberViewState extends TTState<_MobileNumberModel, _MobileNumberVi
               ),
               const SizedBox(height: 222),
               Align(
-                alignment: Alignment.topRight,
-                child: InkWell(
-                  onTap: model.onNextPressed,
-                  child: Container(
-                    height: 67,
-                    width: 67,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Cl.cl53B175,
-                    ),
-                    child: const Icon(
-                      Icons.arrow_forward_ios,
-                      color: Cl.white,
-                    ),
-                  ),
-                ),
-              ),
+                  alignment: Alignment.topRight,
+                  child: TTButtonCircle(
+                    onPressed: model.onNextPressed,
+                  )),
               const SizedBox(height: 30),
             ],
           ),

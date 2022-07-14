@@ -1,13 +1,13 @@
-part of mobile_number;
+part of verification;
 
-class _MobileNumberModel extends TTChangeNotifier<_MobileNumberView> {
+class _VerificationModel extends TTChangeNotifier<_VerificationView> {
   void onBackPressed() {
     Navigator.of(context).pop();
   }
 
   void onNextPressed() {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return createVerification();
+      return createSelectLocation();
     }));
   }
 }
