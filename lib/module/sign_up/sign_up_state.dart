@@ -77,10 +77,7 @@ class _SignUpViewState extends TTState<_SignUpModel, _SignUpView> {
                               text: ' Terms of Service',
                               style: St.body14500.copyWith(color: Cl.cl53B175),
                             ),
-                            TextSpan(
-                              text: ' and',
-                              style: St.body14500.copyWith(color: Cl.cl7C7C7C),
-                            ),
+                            const TextSpan(text: ' and'),
                             TextSpan(
                               text: ' Privacy Policy.',
                               style: St.body14500.copyWith(color: Cl.cl53B175),

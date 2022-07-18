@@ -43,4 +43,9 @@ class St {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle body12600 = const TextStyle(
+    fontFamily: Font.gilroy,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+  );
 }
