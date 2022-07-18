@@ -72,6 +72,7 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
       unselectedItemColor: Cl.cl181725,
       selectedLabelStyle: St.body12600,
       unselectedLabelStyle: St.body12600,
+      elevation: 20,
     );
   }
 }
