@@ -123,25 +123,7 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
           ],
         ),
         const SizedBox(height: 20),
-        Container(
-          height: 52,
-          margin: const EdgeInsets.symmetric(horizontal: 25),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Cl.clF2F3F2,
-          ),
-          padding: const EdgeInsets.fromLTRB(15, 16, 10, 17),
-          child: Row(
-            children: [
-              Image.asset(Id.ic_search),
-              const SizedBox(width: 9),
-              Text(
-                'Search Store',
-                style: St.body14600.copyWith(color: Cl.cl7C7C7C),
-              )
-            ],
-          ),
-        ),
+        const TTButtonSearch(),
         const SizedBox(height: 20),
         CarouselSlider(
           items: model.carouselImage.map((e) {
@@ -161,12 +143,13 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
             );
           }).toList(),
           options: CarouselOptions(
-              clipBehavior: Clip.none,
-              height: 115,
-              autoPlay: true,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: const Duration(milliseconds: 500),
-              autoPlayInterval: const Duration(seconds: 2)),
+            clipBehavior: Clip.none,
+            height: 115,
+            autoPlay: true,
+            enableInfiniteScroll: true,
+            autoPlayAnimationDuration: const Duration(milliseconds: 500),
+            autoPlayInterval: const Duration(seconds: 2),
+          ),
         ),
       ],
     );

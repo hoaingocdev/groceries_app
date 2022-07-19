@@ -3,6 +3,7 @@
 ///---------------------------------------------------------------
 
 export './tt_button_circle_widget.p.dart';
+export './tt_button_search_widget.p.dart';
 export './tt_button_widget.p.dart';
 export './tt_consum.p.dart';
 export './tt_model_mixin.p.dart';

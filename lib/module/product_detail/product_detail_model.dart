@@ -13,4 +13,6 @@ class _ProductDetailModel extends TTChangeNotifier<_ProductDetailView> {
     isLove = !isLove;
     notifyListeners();
   }
+
+  void onAddToBasket() {}
 }
