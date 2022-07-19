@@ -21,7 +21,7 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
             const SizedBox(height: 20),
             buildListGroceriesItem(),
             const SizedBox(height: 20),
-            ListProducts(),
+            const ListProducts(),
             const SizedBox(height: 37),
           ],
         ),

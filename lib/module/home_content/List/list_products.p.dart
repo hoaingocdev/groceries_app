@@ -44,8 +44,8 @@ class ListProducts extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 22),
-              child: Image.network(
-                productsInfo.imageUrl,
+              child: TTNetworkImage(
+                imageUrl: productsInfo.imageUrl,
                 width: 97,
                 height: 85,
               ),
