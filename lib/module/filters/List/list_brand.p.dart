@@ -14,7 +14,7 @@ class ListBrand extends StatelessWidget {
           'Brand',
           style: St.body24600.copyWith(color: Cl.cl181725),
         ),
-        SizedBox(height: 25),
+        const SizedBox(height: 25),
         Item(
           text: 'Individual Callection',
           value: model.isCheckIndividualCallection,

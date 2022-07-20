@@ -24,5 +24,7 @@ class _CartModel extends TTChangeNotifier<_CartView> {
     notifyListeners();
   }
 
-  void onCheckoutPressed() {}
+  void onCheckoutPressed() {
+    showCheckoutBottomSheet(context);
+  }
 }

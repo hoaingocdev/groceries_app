@@ -83,4 +83,9 @@ class St {
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle body16400 = const TextStyle(
+    fontFamily: Font.gilroy,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
 }
