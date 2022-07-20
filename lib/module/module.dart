@@ -5,6 +5,7 @@
 export './account/account_public.dart';
 export './beverages/beverages_public.dart';
 export './cart/cart_public.dart';
+export './checkout/checkout_public.dart';
 export './explore/explore_public.dart';
 export './favourite/favourite_public.dart';
 export './filters/filters_public.dart';

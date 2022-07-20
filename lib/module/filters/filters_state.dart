@@ -22,40 +22,28 @@ class _FiltersViewState extends TTState<_FiltersModel, _FiltersView> {
                 height: 735,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25),
                   ),
                   color: Cl.clF2F3F2,
                 ),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 30),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Categories',
-                        style: St.body24600.copyWith(color: Cl.cl181725),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Column(
+                    children: [
+                      const ListCategories(),
+                      const SizedBox(height: 42),
+                      const ListBrand(),
+                      const Spacer(),
+                      TTButton(
+                        text: 'Apply Filter',
+                        onPressed: model.onApplyFilter,
                       ),
-                    ),
-                    const SizedBox(height: 25),
-                    Row(
-                      children: [
-                        Checkbox(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          activeColor: Cl.cl53B175,
-                          value: true,
-                          onChanged: model.onEggChanged,
-                        ),
-                        // SizedBox(width: 12),
-                        Text(
-                          'Eggs',
-                          style: St.body16500.copyWith(color: Cl.cl181725),
-                        )
-                      ],
-                    )
-                  ],
+                      const SizedBox(
+                        height: 22,
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
