@@ -16,7 +16,9 @@ class _ExploreViewState extends TTState<_ExploreModel, _ExploreView> {
             ),
           ),
           const SizedBox(height: 30),
-          const TTButtonSearch(),
+          TTButtonSearch(
+            onPressed: model.onSearchPressed,
+          ),
           const SizedBox(height: 20),
           Expanded(
             child: Padding(

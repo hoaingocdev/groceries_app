@@ -23,4 +23,10 @@ class _ExploreModel extends TTChangeNotifier<_ExploreView> {
       return createBeverages();
     }));
   }
+
+  void onSearchPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createSearch();
+    }));
+  }
 }
