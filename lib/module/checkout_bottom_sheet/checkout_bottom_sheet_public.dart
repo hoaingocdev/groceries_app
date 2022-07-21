@@ -1,6 +1,8 @@
 library checkout_bottom_sheet;
 
 import 'package:flutter/material.dart';
+import 'package:groceries_app/model/model.dart';
+import 'package:groceries_app/module/module.dart';
 import 'package:groceries_app/res/res.dart';
 import 'package:provider/provider.dart';
 import 'package:groceries_app/widget/widget.dart';
@@ -8,6 +10,7 @@ import 'package:groceries_app/widget/widget.dart';
 part 'checkout_bottom_sheet_view.dart';
 part 'checkout_bottom_sheet_model.dart';
 part 'checkout_bottom_sheet_state.dart';
+part 'widget/popupMenu.p.dart';
 
 Future showCheckoutBottomSheet(BuildContext context) {
   return showModalBottomSheet(

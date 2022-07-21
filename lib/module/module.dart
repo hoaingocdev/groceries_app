@@ -14,6 +14,7 @@ export './home_content/home_content_public.dart';
 export './log_in/log_in_public.dart';
 export './mobile_number/mobile_number_public.dart';
 export './onbording/onbording_public.dart';
+export './order_accepted/order_accepted_public.dart';
 export './product_detail/product_detail_public.dart';
 export './search/search_public.dart';
 export './select_location/select_location_public.dart';

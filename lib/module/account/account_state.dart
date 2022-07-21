@@ -7,44 +7,7 @@ class _AccountViewState extends TTState<_AccountModel, _AccountView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: 21 + device.padding.top,
-                left: 25,
-              ),
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(27),
-                    child: const TTNetworkImage(
-                      imageUrl: 'https://st.quantrimang.com/photos/image/2021/09/23/AVT-Chibi-10.jpg',
-                      height: 64,
-                      width: 64,
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Afsar Hossen',
-                            style: St.body20700.copyWith(color: Cl.cl181725),
-                          ),
-                          const SizedBox(width: 15),
-                          Image.asset(Id.ic_edit)
-                        ],
-                      ),
-                      Text(
-                        'Imshuvo97@gmail.com',
-                        style: St.body16400.copyWith(color: Cl.cl7C7C7C),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
+            buildAccounInfo(),
             const SizedBox(height: 30),
             Container(
               height: 1,
@@ -83,26 +46,72 @@ class _AccountViewState extends TTState<_AccountModel, _AccountView> {
               imageAsset: Id.ic_about,
             ),
             const SizedBox(height: 52),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: TTButton(
-                backgroundColor: Cl.clF2F3F2,
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Text(
-                        'Log Out',
-                        style: St.body18600.copyWith(color: Cl.cl53B175),
-                      ),
-                    ),
-                    Positioned(
-                      top: 24,
-                      left: 25,
-                      child: Image.asset(Id.ic_log_out),
-                    )
-                  ],
-                ),
+            buildButton(),
+            const SizedBox(height: 25),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildAccounInfo() {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: 21 + device.padding.top,
+        left: 25,
+      ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(27),
+            child: const TTNetworkImage(
+              imageUrl: 'https://st.quantrimang.com/photos/image/2021/09/23/AVT-Chibi-10.jpg',
+              height: 64,
+              width: 64,
+            ),
+          ),
+          const SizedBox(width: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    'Afsar Hossen',
+                    style: St.body20700.copyWith(color: Cl.cl181725),
+                  ),
+                  const SizedBox(width: 15),
+                  Image.asset(Id.ic_edit)
+                ],
               ),
+              Text(
+                'Imshuvo97@gmail.com',
+                style: St.body16400.copyWith(color: Cl.cl7C7C7C),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: TTButton(
+        backgroundColor: Cl.clF2F3F2,
+        child: Stack(
+          children: [
+            Center(
+              child: Text(
+                'Log Out',
+                style: St.body18600.copyWith(color: Cl.cl53B175),
+              ),
+            ),
+            Positioned(
+              top: 24,
+              left: 25,
+              child: Image.asset(Id.ic_log_out),
             )
           ],
         ),
