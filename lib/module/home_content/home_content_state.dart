@@ -135,7 +135,7 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    Id.ic_background3,
+                    Id.img_background3,
                     fit: BoxFit.cover,
                   ),
                 ),

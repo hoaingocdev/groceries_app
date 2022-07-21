@@ -9,7 +9,7 @@ class _MobileNumberViewState extends TTState<_MobileNumberModel, _MobileNumberVi
         child: Stack(
           children: [
             Image.asset(
-              Id.ic_background2,
+              Id.img_background2,
               fit: BoxFit.cover,
             ),
             Positioned.fill(

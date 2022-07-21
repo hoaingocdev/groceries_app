@@ -9,7 +9,7 @@ class _SignUpViewState extends TTState<_SignUpModel, _SignUpView> {
         child: Stack(
           children: [
             Image.asset(
-              Id.ic_background2,
+              Id.img_background2,
             ),
             Positioned(
               top: 90 + device.padding.top,

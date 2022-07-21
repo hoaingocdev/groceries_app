@@ -9,7 +9,7 @@ class _LogInViewState extends TTState<_LogInModel, _LogInView> {
         child: Stack(
           children: [
             Image.asset(
-              Id.ic_background2,
+              Id.img_background2,
             ),
             Positioned(
               top: 77 + device.padding.top,

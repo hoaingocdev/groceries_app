@@ -9,7 +9,7 @@ class _VerificationViewState extends TTState<_VerificationModel, _VerificationVi
         child: Stack(
           children: [
             Image.asset(
-              Id.ic_background2,
+              Id.img_background2,
               fit: BoxFit.cover,
             ),
             SingleChildScrollView(

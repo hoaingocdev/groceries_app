@@ -2,12 +2,12 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
+// ignore_for_file: constant_identifier_names
+
 class Id {
   Id._();
 
   static const String ic_about = 'assets/images/ic_about.png';
-  static const String ic_background2 = 'assets/images/ic_background2.png';
-  static const String ic_background3 = 'assets/images/ic_background3.png';
   static const String ic_bell = 'assets/images/ic_bell.png';
   static const String ic_card = 'assets/images/ic_card.png';
   static const String ic_carrot = 'assets/images/ic_carrot.png';
@@ -39,7 +39,11 @@ class Id {
   static const String ic_store = 'assets/images/ic_store.png';
   static const String ic_user = 'assets/images/ic_user.png';
   static const String img_background = 'assets/images/img_background.png';
+  static const String img_background2 = 'assets/images/img_background2.png';
+  static const String img_background3 = 'assets/images/img_background3.png';
+  static const String img_background4 = 'assets/images/img_background4.png';
   static const String img_background_carrot = 'assets/images/img_background_carrot.png';
+  static const String img_background_order = 'assets/images/img_background_order.png';
   static const String img_food = 'assets/images/img_food.png';
   static const String img_star = 'assets/images/img_star.png';
 }
