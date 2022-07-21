@@ -11,6 +11,7 @@ class TTProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(16),
       onTap: onPressed,
       child: Container(
         padding: const EdgeInsets.only(left: 25, right: 14),

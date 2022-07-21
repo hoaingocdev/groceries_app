@@ -30,8 +30,15 @@ class _FavouriteViewState extends TTState<_FavouriteModel, _FavouriteView> {
                 },
               ),
             ),
-            const TTButton(
-              text: 'Add All To Cart',
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24),
+              child: SizedBox(
+                height: 80,
+                child: TTButton(
+                  onPressed: model.onAddAllToCart,
+                  text: 'Add All To Cart',
+                ),
+              ),
             )
           ],
         ),

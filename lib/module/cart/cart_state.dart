@@ -37,9 +37,42 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
             child: SizedBox(
               height: 80,
               child: Center(
-                child: TTButton(
-                  onPressed: model.onCheckoutPressed,
-                  text: 'Go to Checkout',
+                child: Stack(
+                  children: [
+                    TTButton(
+                      onPressed: model.onCheckoutPressed,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Text(
+                              'Go to Checkout',
+                              style: St.body18600.copyWith(color: Cl.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                      text: 'Go to Checkout',
+                    ),
+                    Positioned(
+                      top: 23,
+                      right: 24,
+                      child: Container(
+                        height: 22,
+                        width: 43,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Cl.cl489E67,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '\$12.96',
+                            style: St.body12600.copyWith(color: Cl.white),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),

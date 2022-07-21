@@ -18,4 +18,6 @@ class _FavouriteModel extends TTChangeNotifier<_FavouriteView> {
     });
     products.addAll(lsProduct);
   }
+
+  void onAddAllToCart() {}
 }

@@ -9,22 +9,26 @@ class _SearchViewState extends TTState<_SearchModel, _SearchView> {
         child: Column(
           children: [
             buildTextField(model),
-            const SizedBox(height: 30),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 15,
-                  childAspectRatio: 173 / 280,
+            if (model.isShowClose)
+              Expanded(
+                child: SafeArea(
+                  top: false,
+                  child: GridView.builder(
+                    padding: EdgeInsets.symmetric(vertical: 30),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 15,
+                      crossAxisSpacing: 15,
+                      childAspectRatio: 173 / 280,
+                    ),
+                    itemBuilder: (_, i) {
+                      return TTProducts(
+                        productsInfo: model.products[i],
+                      );
+                    },
+                  ),
                 ),
-                itemBuilder: (_, i) {
-                  return TTProducts(
-                    productsInfo: model.products[i],
-                  );
-                },
-              ),
-            )
+              )
           ],
         ),
       ),
@@ -38,12 +42,21 @@ class _SearchViewState extends TTState<_SearchModel, _SearchView> {
         children: [
           Expanded(
             child: TextField(
+              controller: model.controller,
+              onChanged: (v) => model.validate(),
               cursorColor: Cl.cl7C7C7C,
               decoration: InputDecoration(
-                suffixIcon: IconButton(
-                  onPressed: model.onClosedPressed,
-                  icon: Image.asset(Id.ic_close),
-                ),
+                suffixIcon: model.isShowClose
+                    ? SizedBox(
+                        height: 15,
+                        width: 15,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(7),
+                          onTap: model.onClosedPressed,
+                          child: Image.asset(Id.ic_close),
+                        ),
+                      )
+                    : SizedBox(),
                 prefixIcon: Image.asset(Id.ic_search),
                 filled: true,
                 fillColor: Cl.clF2F3F2,

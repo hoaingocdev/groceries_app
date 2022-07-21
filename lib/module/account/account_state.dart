@@ -98,22 +98,26 @@ class _AccountViewState extends TTState<_AccountModel, _AccountView> {
   Widget buildButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: TTButton(
-        backgroundColor: Cl.clF2F3F2,
-        child: Stack(
-          children: [
-            Center(
-              child: Text(
-                'Log Out',
-                style: St.body18600.copyWith(color: Cl.cl53B175),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(19),
+        onTap: model.onLogOutPressed,
+        child: TTButton(
+          backgroundColor: Cl.clF2F3F2,
+          child: Stack(
+            children: [
+              Center(
+                child: Text(
+                  'Log Out',
+                  style: St.body18600.copyWith(color: Cl.cl53B175),
+                ),
               ),
-            ),
-            Positioned(
-              top: 24,
-              left: 25,
-              child: Image.asset(Id.ic_log_out),
-            )
-          ],
+              Positioned(
+                top: 24,
+                left: 25,
+                child: Image.asset(Id.ic_log_out),
+              )
+            ],
+          ),
         ),
       ),
     );

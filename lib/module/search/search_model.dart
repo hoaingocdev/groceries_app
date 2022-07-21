@@ -1,10 +1,23 @@
 part of search;
 
 class _SearchModel extends TTChangeNotifier<_SearchView> {
+  final TextEditingController controller;
   final products = <ProductsInfo>[];
+  bool isShowClose = false;
 
-  _SearchModel() {
+  _SearchModel() : controller = TextEditingController() {
     _initData();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  void validate() {
+    isShowClose = controller.text.isNotEmpty;
+    notifyListeners();
   }
 
   void _initData() {
@@ -19,7 +32,9 @@ class _SearchModel extends TTChangeNotifier<_SearchView> {
     products.addAll(lsProduct);
   }
 
-  void onClosedPressed() {}
+  void onClosedPressed() {
+    controller.clear();
+  }
 
   void onFiltersPressed() {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {

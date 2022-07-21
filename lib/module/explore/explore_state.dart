@@ -48,6 +48,7 @@ class _ExploreViewState extends TTState<_ExploreModel, _ExploreView> {
     VoidCallback? onPressed,
   }) {
     return InkWell(
+      borderRadius: BorderRadius.circular(18),
       onTap: onPressed,
       child: Container(
         padding: const EdgeInsets.fromLTRB(31, 28, 31, 15),
