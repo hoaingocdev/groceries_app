@@ -42,6 +42,7 @@ class Id {
   static const String img_background2 = 'assets/images/img_background2.png';
   static const String img_background3 = 'assets/images/img_background3.png';
   static const String img_background4 = 'assets/images/img_background4.png';
+  static const String img_background5 = 'assets/images/img_background5.png';
   static const String img_background_carrot = 'assets/images/img_background_carrot.png';
   static const String img_background_order = 'assets/images/img_background_order.png';
   static const String img_food = 'assets/images/img_food.png';

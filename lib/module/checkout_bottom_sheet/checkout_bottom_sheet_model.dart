@@ -45,7 +45,7 @@ class _CheckoutBottomSheetModel extends TTChangeNotifier<_CheckoutBottomSheetVie
     Navigator.of(context).pop();
   }
 
-  onPamentSelected(PamentInfo? value) {
+  void onPamentSelected(PamentInfo? value) {
     if (value == null) {
       return;
     }
@@ -56,7 +56,7 @@ class _CheckoutBottomSheetModel extends TTChangeNotifier<_CheckoutBottomSheetVie
     notifyListeners();
   }
 
-  onPromoCodeSeleted(PromoCodeInfo? value) {
+  void onPromoCodeSeleted(PromoCodeInfo? value) {
     if (value == null) {
       return;
     }
@@ -67,7 +67,7 @@ class _CheckoutBottomSheetModel extends TTChangeNotifier<_CheckoutBottomSheetVie
     notifyListeners();
   }
 
-  onDeliverySelected(DeliveryInfo? value) {
+  void onDeliverySelected(DeliveryInfo? value) {
     if (value == null) {
       return;
     }
@@ -79,8 +79,14 @@ class _CheckoutBottomSheetModel extends TTChangeNotifier<_CheckoutBottomSheetVie
   }
 
   void onPlaceOrderPressed() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return createOrderAccepted();
-    }));
+    final isSuccess = Random.secure().nextBool();
+    if (isSuccess) {
+      Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+        return createOrderAccepted();
+      }));
+      return;
+    }
+
+    showOrderFailedDialog(context);
   }
 }

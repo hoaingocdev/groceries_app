@@ -1,5 +1,7 @@
 library checkout_bottom_sheet;
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:groceries_app/model/model.dart';
 import 'package:groceries_app/module/module.dart';
@@ -14,17 +16,19 @@ part 'widget/popupMenu.p.dart';
 
 Future showCheckoutBottomSheet(BuildContext context) {
   return showModalBottomSheet(
-      clipBehavior: Clip.hardEdge,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
+    clipBehavior: Clip.hardEdge,
+    isScrollControlled: true,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30),
       ),
-      context: context,
-      builder: (_) {
-        return _createCheckoutBottomSheet();
-      });
+    ),
+    context: context,
+    builder: (_) {
+      return _createCheckoutBottomSheet();
+    },
+  );
 }
 
 ChangeNotifierProvider<_CheckoutBottomSheetModel> _createCheckoutBottomSheet() {

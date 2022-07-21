@@ -33,13 +33,18 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: TTButton(
-              onPressed: model.onCheckoutPressed,
-              text: 'Go to Checkout',
+            padding: const EdgeInsets.fromLTRB(25, 20, 25, 0),
+            child: SizedBox(
+              height: 80,
+              child: Center(
+                child: TTButton(
+                  onPressed: model.onCheckoutPressed,
+                  text: 'Go to Checkout',
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
         ],
       ),
     );

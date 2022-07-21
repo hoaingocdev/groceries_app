@@ -3,50 +3,47 @@ part of checkout_bottom_sheet;
 class _CheckoutBottomSheetViewState extends TTState<_CheckoutBottomSheetModel, _CheckoutBottomSheetView> {
   @override
   Widget buildWithModel(BuildContext context, _CheckoutBottomSheetModel model) {
-    return SizedBox(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 30),
-            buildTitle(model),
-            const SizedBox(height: 30),
-            Container(
-              height: 1,
-              color: Cl.clE2E2E2.withOpacity(0.7),
-            ),
-            PopupMenu(
-              onDeliverySelected: (v) => model.onDeliverySelected(v),
-              list: model.deliveries,
-              title: 'Delivery',
-              text: model.deliveryDisplay,
-            ),
-            PopupMenu(
-              list: model.promoCodes,
-              onPromoCodeSelected: (v) => model.onPromoCodeSeleted(v),
-              title: 'Promo Code',
-              text: model.promoCodeDisplay,
-            ),
-            PopupMenu(
-              onPamentSelected: (v) => model.onPamentSelected(v),
-              list: model.paments,
-              title: 'Pament',
-              image: Image.asset(model.pamentDisplay),
-            ),
-            buildTotalCost(),
-            const SizedBox(height: 20),
-            buildText(),
-            const SizedBox(height: 27),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: TTButton(
-                text: 'Place Order',
-                onPressed: model.onPlaceOrderPressed,
-              ),
-            ),
-            const SizedBox(height: 27),
-          ],
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const SizedBox(height: 30),
+        buildTitle(model),
+        const SizedBox(height: 30),
+        Container(
+          height: 1,
+          color: Cl.clE2E2E2.withOpacity(0.7),
         ),
-      ),
+        PopupMenu(
+          onDeliverySelected: (v) => model.onDeliverySelected(v),
+          list: model.deliveries,
+          title: 'Delivery',
+          text: model.deliveryDisplay,
+        ),
+        PopupMenu(
+          list: model.promoCodes,
+          onPromoCodeSelected: (v) => model.onPromoCodeSeleted(v),
+          title: 'Promo Code',
+          text: model.promoCodeDisplay,
+        ),
+        PopupMenu(
+          onPamentSelected: (v) => model.onPamentSelected(v),
+          list: model.paments,
+          title: 'Pament',
+          image: Image.asset(model.pamentDisplay),
+        ),
+        buildTotalCost(),
+        const SizedBox(height: 20),
+        buildText(),
+        const SizedBox(height: 27),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: TTButton(
+            text: 'Place Order',
+            onPressed: model.onPlaceOrderPressed,
+          ),
+        ),
+        const SizedBox(height: 27)
+      ],
     );
   }
 
