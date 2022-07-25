@@ -14,7 +14,7 @@ class _SearchViewState extends TTState<_SearchModel, _SearchView> {
                 child: SafeArea(
                   top: false,
                   child: GridView.builder(
-                    padding: EdgeInsets.symmetric(vertical: 30),
+                    padding: const EdgeInsets.symmetric(vertical: 30),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 15,
@@ -56,7 +56,7 @@ class _SearchViewState extends TTState<_SearchModel, _SearchView> {
                           child: Image.asset(Id.ic_close),
                         ),
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 prefixIcon: Image.asset(Id.ic_search),
                 filled: true,
                 fillColor: Cl.clF2F3F2,

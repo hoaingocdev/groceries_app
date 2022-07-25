@@ -22,10 +22,18 @@ class TTButtonCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color bgColor = Cl.cl53B175;
+    if (onPressed == null) {
+      bgColor = backgroundColor ?? Cl.cl7C7C7C;
+    }
     return Material(
-      color: onPressed == null ? backgroundColor ?? Cl.cl7C7C7C : Cl.cl53B175,
-      borderRadius: borderRadius ?? const BorderRadius.all(Radius.circular(35)),
+      color: bgColor,
+      borderRadius: borderRadius ??
+          const BorderRadius.all(
+            Radius.circular(35),
+          ),
       child: InkWell(
+        borderRadius: BorderRadius.circular(35),
         onTap: onPressed,
         child: Container(
           height: height,
