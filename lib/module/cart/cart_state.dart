@@ -12,73 +12,79 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
           style: St.body20700.copyWith(color: Cl.cl181725),
         ),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.separated(
-              separatorBuilder: (_, i) {
-                return Container(
-                  height: 1,
-                  color: Cl.clE2E2E2,
-                  margin: const EdgeInsets.symmetric(horizontal: 25),
-                );
-              },
-              itemCount: model.products.length,
-              itemBuilder: (_, i) {
-                return buildListItem(
-                  index: i,
-                  productsInfo: model.products[i],
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(25, 20, 25, 0),
-            child: SizedBox(
-              height: 80,
-              child: Center(
-                child: Stack(
-                  children: [
-                    TTButton(
-                      onPressed: model.onCheckoutPressed,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Text(
-                              'Go to Checkout',
-                              style: St.body18600.copyWith(color: Cl.white),
-                            ),
-                          ),
-                        ],
-                      ),
-                      text: 'Go to Checkout',
-                    ),
-                    Positioned(
-                      top: 23,
-                      right: 24,
-                      child: Container(
-                        height: 22,
-                        width: 43,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: Cl.cl489E67,
-                        ),
-                        child: Center(
-                          child: Text(
-                            '\$12.96',
-                            style: St.body12600.copyWith(color: Cl.white),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
+      body: Consum<CartService>(
+        value: cartSrv,
+        builder: (context, srv) {
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.separated(
+                  separatorBuilder: (_, i) {
+                    return Container(
+                      height: 1,
+                      color: Cl.clE2E2E2,
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
+                    );
+                  },
+                  itemCount: srv.products.length,
+                  itemBuilder: (_, i) {
+                    return buildListItem(
+                      index: i,
+                      productsInfo: srv.products[i],
+                    );
+                  },
                 ),
               ),
-            ),
-          ),
-          const SizedBox(height: 20),
-        ],
+              if (srv.products.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 0),
+                  child: SizedBox(
+                    height: 80,
+                    child: Center(
+                      child: Stack(
+                        children: [
+                          TTButton(
+                            onPressed: model.onCheckoutPressed,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Center(
+                                  child: Text(
+                                    'Go to Checkout',
+                                    style: St.body18600.copyWith(color: Cl.white),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            text: 'Go to Checkout',
+                          ),
+                          Positioned(
+                            top: 23,
+                            right: 24,
+                            child: Container(
+                              height: 22,
+                              width: 43,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Cl.cl489E67,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '\$12.96',
+                                  style: St.body12600.copyWith(color: Cl.white),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              const SizedBox(height: 20),
+            ],
+          );
+        },
       ),
     );
   }
