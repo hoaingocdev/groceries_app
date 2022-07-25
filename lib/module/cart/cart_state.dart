@@ -5,6 +5,16 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
   Widget buildWithModel(BuildContext context, _CartModel model) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Cl.cl181725,
+        leading: model.isFromHome
+            ? null
+            : InkWell(
+                borderRadius: BorderRadius.circular(10),
+                onTap: model.onBackPressed,
+                child: const Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                ),
+              ),
         elevation: 0.5,
         backgroundColor: Cl.white,
         title: Text(
@@ -18,7 +28,10 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
           return Column(
             children: [
               Expanded(
-                child: ListView.separated(
+                child:
+
+                    // )
+                    ListView.separated(
                   separatorBuilder: (_, i) {
                     return Container(
                       height: 1,
@@ -84,6 +97,12 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
               const SizedBox(height: 20),
             ],
           );
+          Center(
+            child: Text(
+              'My Cart is Empty',
+              style: St.body20700.copyWith(color: Cl.cl181725),
+            ),
+          );
         },
       ),
     );
@@ -93,70 +112,77 @@ class _CartViewState extends TTState<_CartModel, _CartView> {
     required ProductsInfo productsInfo,
     required int index,
   }) {
-    return Row(
-      children: [
-        TTNetworkImage(
-          imageUrl: productsInfo.imageUrl,
-          height: 64,
-          width: 70,
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        productsInfo.foodName,
-                        style: St.body16700.copyWith(color: Cl.cl181725),
-                      ),
-                    ),
-                    IconButton(
-                      splashRadius: 10,
-                      onPressed: () => model.onClearPressed(index),
-                      icon: const Icon(
-                        Icons.close,
-                        color: Cl.clB3B3B3,
-                      ),
-                    ),
-                  ],
-                ),
-                Text(
-                  productsInfo.amount,
-                  style: St.body14500.copyWith(color: Cl.cl7C7C7C),
-                ),
-                const SizedBox(height: 13),
-                Row(
-                  children: [
-                    buildItem(
-                      imageAsset: Id.ic_minus,
-                    ),
-                    const SizedBox(width: 14),
-                    Text(
-                      '1',
-                      style: St.body16600.copyWith(color: Cl.cl181725),
-                    ),
-                    const SizedBox(width: 14),
-                    buildItem(
-                      imageAsset: Id.ic_plus,
-                      color: Cl.cl53B175,
-                    ),
-                    const Spacer(),
-                    Text(
-                      productsInfo.priceDisplay,
-                      style: St.body18600.copyWith(color: Cl.cl181725),
-                    )
-                  ],
-                ),
-                const SizedBox(height: 30),
-              ],
+    return Deleteable(
+      builder: (context, delete) {
+        return Row(
+          children: [
+            TTNetworkImage(
+              imageUrl: productsInfo.imageUrl,
+              height: 64,
+              width: 70,
             ),
-          ),
-        )
-      ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            productsInfo.foodName,
+                            style: St.body16700.copyWith(color: Cl.cl181725),
+                          ),
+                        ),
+                        IconButton(
+                          splashRadius: 10,
+                          onPressed: () async {
+                            await delete();
+                            model.onClearPressed(index);
+                          },
+                          icon: const Icon(
+                            Icons.close,
+                            color: Cl.clB3B3B3,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      productsInfo.amount,
+                      style: St.body14500.copyWith(color: Cl.cl7C7C7C),
+                    ),
+                    const SizedBox(height: 13),
+                    Row(
+                      children: [
+                        buildItem(
+                          imageAsset: Id.ic_minus,
+                        ),
+                        const SizedBox(width: 14),
+                        Text(
+                          '1',
+                          style: St.body16600.copyWith(color: Cl.cl181725),
+                        ),
+                        const SizedBox(width: 14),
+                        buildItem(
+                          imageAsset: Id.ic_plus,
+                          color: Cl.cl53B175,
+                        ),
+                        const Spacer(),
+                        Text(
+                          productsInfo.priceDisplay,
+                          style: St.body18600.copyWith(color: Cl.cl181725),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 30),
+                  ],
+                ),
+              ),
+            )
+          ],
+        );
+      },
     );
   }
 

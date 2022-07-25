@@ -16,7 +16,7 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
       case 1:
         return createExplore();
       case 2:
-        return createCart();
+        return createCart(isFromHome: true);
       case 3:
         return createFavourite();
       case 4:

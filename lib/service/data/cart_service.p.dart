@@ -31,7 +31,9 @@ class CartService extends ChangeNotifier {
       return;
     }
     products.removeAt(index);
-    notifyListeners();
+    if (products.isEmpty) {
+      notifyListeners();
+    }
   }
 
   void addItem(ProductsInfo value) {
