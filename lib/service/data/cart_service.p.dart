@@ -33,4 +33,9 @@ class CartService extends ChangeNotifier {
     products.removeAt(index);
     notifyListeners();
   }
+
+  void addItem(ProductsInfo value) {
+    products.add(value);
+    notifyListeners();
+  }
 }

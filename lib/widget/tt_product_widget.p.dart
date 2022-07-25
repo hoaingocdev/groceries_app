@@ -5,8 +5,14 @@ import 'package:groceries_app/widget/widget.dart';
 
 class TTProducts extends StatelessWidget {
   final VoidCallback? onPressed;
+  final VoidCallback? onAddToCartPressed;
   final ProductsInfo productsInfo;
-  const TTProducts({Key? key, this.onPressed, required this.productsInfo}) : super(key: key);
+  const TTProducts({
+    Key? key,
+    this.onPressed,
+    required this.productsInfo,
+    this.onAddToCartPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +57,7 @@ class TTProducts extends StatelessWidget {
                 ),
                 const Spacer(),
                 TTButtonCircle(
+                  onPressed: onAddToCartPressed,
                   height: 46,
                   width: 46,
                   borderRadius: BorderRadius.circular(17),

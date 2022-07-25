@@ -39,6 +39,7 @@ class _BeveragesViewState extends TTState<_BeveragesModel, _BeveragesView> {
                   childAspectRatio: 500 / 800,
                 ),
                 itemBuilder: (_, i) {
+                  final item = model.products[i];
                   return Container(
                     height: 800,
                     width: 500,
@@ -47,7 +48,8 @@ class _BeveragesViewState extends TTState<_BeveragesModel, _BeveragesView> {
                       border: Border.all(color: Cl.clE2E2E2),
                     ),
                     child: TTProducts(
-                      productsInfo: model.products[i],
+                      productsInfo: item,
+                      onAddToCartPressed: () => model.onAddToCartPressed(item),
                     ),
                   );
                 },

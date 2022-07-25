@@ -23,4 +23,13 @@ class _BeveragesModel extends TTChangeNotifier<_BeveragesView> {
   }
 
   void onFillPressed() {}
+
+  void onAddToCartPressed(ProductsInfo item) {
+    cartSrv.addItem(item);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => createCart(),
+      ),
+    );
+  }
 }

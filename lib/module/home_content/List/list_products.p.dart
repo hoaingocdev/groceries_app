@@ -18,9 +18,11 @@ class ListProducts extends StatelessWidget {
           separatorBuilder: (_, i) => const SizedBox(width: 20),
           itemCount: model.products.length,
           itemBuilder: (_, i) {
+            final item = model.products[i];
             return TTProducts(
               productsInfo: model.products[i],
               onPressed: model.onProductDetailPressed,
+              onAddToCartPressed: () => model.onAddToCartPressed(item),
             );
           },
         ),

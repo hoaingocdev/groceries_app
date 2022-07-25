@@ -40,4 +40,13 @@ class _HomeContentModel extends TTChangeNotifier<_HomeContentView> {
       return createProductDetail();
     }));
   }
+
+  void onAddToCartPressed(ProductsInfo item) {
+    cartSrv.addItem(item);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => createCart(),
+      ),
+    );
+  }
 }

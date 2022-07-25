@@ -22,8 +22,10 @@ class _SearchViewState extends TTState<_SearchModel, _SearchView> {
                       childAspectRatio: 173 / 280,
                     ),
                     itemBuilder: (_, i) {
+                      final item = model.products[i];
                       return TTProducts(
-                        productsInfo: model.products[i],
+                        productsInfo: item,
+                        onAddToCartPressed: () => model.onAddToCartPressed(item),
                       );
                     },
                   ),

@@ -41,4 +41,13 @@ class _SearchModel extends TTChangeNotifier<_SearchView> {
       return createFilters();
     }));
   }
+
+  void onAddToCartPressed(ProductsInfo item) {
+    cartSrv.addItem(item);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => createCart(),
+      ),
+    );
+  }
 }
